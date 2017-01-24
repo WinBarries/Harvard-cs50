@@ -1,0 +1,28 @@
+human language(english,spanish,...)
+
+c++,java,c, fortran---we need IDE to develop these programs
+
+assembly
+machine language
+
+machine language
+
+binary
+math
+=======
+ide translate instructions(c++) to binary
+
+c++ logical operation
+
+AND = && = . = a-b>c
+
+OR = || =
+
+NOT = ! = A(with a dash at the top) = a-D-(A with dash at the top)
+
+XOR = {c=(A&&!B)||(!A&&B)}    = plus inside a circle =
+
+The Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.
+==================================================
+Top 500 used passwords, top 10000 used passwords, rockyou.txt (can be found in /usr/share/wordlists/rockyou.txt.gz on Kali Linux). Online cracking can take a long time so you would probably want to use them in that order for most services.
+========================================
