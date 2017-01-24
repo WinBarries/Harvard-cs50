@@ -5,93 +5,86 @@
 using namespace std;
 
 int findminidx(string scientist[], int length);
-/*{
-    int mininx = 0;
-    for(int i = 0; i < length; i++) {
-        if(scientist[i] < scientist[mininx]){
-            mininx = i;
-        }
-    }
-    return mininx;
-}
+void selectionSort(string scientist[], int length);
+void swap(string scientist[], int i, int indexOfSmallest);
 
-void swap(string scientist[], int i, int indexOfSmallest){
-    //int indexOfSmallest = 0;
-    string temp = scientist[i];
-    scientist[i] = scientist[indexOfSmallest];
-    scientist[indexOfSmallest] = temp;
+/*{
+int mininx = 0;
+for(int i = 0; i < length; i++) {
+if(scientist[i] < scientist[mininx]){
+mininx = i;
+}
+}
+return mininx;
 }
 
 */
 
-void selectionSort(string scientist[], int length){
-    int i , minIndex ;
-    string indexOfSmallest ;
-    for(int i = 0; i < (length-1); i++){
-        minIndex = i;
-        indexOfSmallest = scientist[i];
-        for(int j = i+1; j <length; j++) {
-            if (scientist[j] < indexOfSmallest){
-                indexOfSmallest = scientist[j];
-                minIndex = j;
-            }
-        }
-        /*if( i != indexOfSmallest){
-            void swap(string scientist[], int i, int indexOfSmallest);
-        } */
-        scientist[minIndex] = scientist[i];
-        scientist[i] = minIndex;
 
-    }
-
-   // return scientist;
-}
 
 int main()
 
 {
 
-    string scientist[7] = { "Newton", "Pascal", "Euler", "Gauss", "Bayes", "Fibonacci", "Turing" };
+	string scientist[7] = { "Newton", "Pascal", "Euler", "Gauss", "Bayes", "Fibonacci", "Turing" };
 
-    cout << scientist[0] << endl;
+	cout << scientist[0] << endl;
 
-    cout << scientist[findminidx(scientist, 7)];
+	cout << scientist[findminidx(scientist, 7)];
 
-    cout<<endl;
+	cout << endl;
 
-    for (int i = 0; i < 7; i++)
+	selectionSort(scientist, 7);
 
-    cout << scientist[i] << " ";
+	for (int i = 0; i < 7; i++)
 
-    cout << endl;
+		cout << scientist[i] << " ";
 
-    for (string name : scientist)
+	cout << endl;
 
-    cout<< name << " ";
+	for (string name : scientist)
 
-    return 0;
+		cout << name << " ";
+
+	return 0;
 
 }
 
-    int findminidx(string scientist[], int length)
+void selectionSort(string scientist[], int length){
+	int i, minIndex;
+	string indexOfSmallest;
 
-    {
+	for (int i = 0; i < (length - 1); i++)
+	{
+		minIndex = i;
 
-        int mininx = 0;
+		for (int j = i + 1; j <length; j++) {
+			if (scientist[j] < scientist[i]){
+				swap(scientist, j, i);
+			}
+		}
+	}
 
-        for (int i = 1; i < length; i++)
+	// return scientist;
+}
 
-    {
+int findminidx(string scientist[], int length)
+{
+	int mininx = 0;
 
-    if (scientist[i] < scientist[mininx])
+	for (int i = 1; i < length; i++)
 
-    mininx = i;
+	{
+		if (scientist[i] < scientist[mininx])
+				mininx = i;
+	}
+		return mininx;
+}
 
-    }
 
-    return mininx;
-
-
-
-    }
-
+void swap(string scientist[], int i, int indexOfSmallest){
+	//int indexOfSmallest = 0;
+	string temp = scientist[i];
+	scientist[i] = scientist[indexOfSmallest];
+	scientist[indexOfSmallest] = temp;
+}
