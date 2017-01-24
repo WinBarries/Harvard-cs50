@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1485225026 source:/home/tito/csc/csc122/main.cpp
+	<iostream>
+	<string>
+
