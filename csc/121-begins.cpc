@@ -1,7 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 //	Name:		: Kabir Bolatito
 //	Date		: 01-27-2017
-//	School		: Essex County College
 //	Description	: This program calculates the body madd index(BMI)
 //				  Using the formula:
 //				  BMI = (weight/(height)^2)*703
@@ -15,27 +14,47 @@ using namespace std;
 int main()
 {
 	//declaration (refering to the areas of the variables)
-
+	float weight;
+	float height;
+	float BMI;
 
 	// initialization (cleaning area of variables in the area)
-	//int BMI, weight, height;
+	weight = 0.0;
+	height = 0.0;
 
 	// 1. prompt the user to enter his height in pounds
-	cout << "Enter your height in pound"<< endl;
+	cout << "Please enter your weight in pounds: ";
 
 	// 2. capture the user entry and save it to a variable
-	// 3. prompt the user to enter his height in inches
-	// 4. capture the user entry and save it to a variable
-	// 5. Do the calculation,using the formular in description
-
-	/*
-	///int BMI, weight, height;
-	int weight;
-	cout << "Enter your weight";
 	cin >> weight;
-	//cout << weight;
-	*/
+	
+	// 3. prompt the user to enter his height in inches
+	cout << "Please enter your height in inches: ";
 
+	// 4. capture the user entry and save it to a variable
+	cin >> height;
+
+	// 5. Do the calculation,using the formular in description
+	BMI = (weight / (height*height)) * 703;
+	//BMI = (weight /pow(height, 2)) *703;
+
+	// 6. Desplay the BMI result
+	cout << "your BMI is: " << BMI << endl;
+
+	// 7. Decide if you are over weight
+	if (BMI > 24.9) {
+		cout << "Since your BMI is " << BMI << ", therefore you are overweight." << endl;
+	}
+
+	// 8. Or normal 
+	else if ((BMI >= 18.5) && (BMI <= 24.9)) {
+		cout << "Since your BMI is " << BMI << ", therefore you are normal." << endl;
+	}
+
+	// 9. Or underweight
+	else
+		cout << "Since your BMI is " << BMI << ", therefore you are underweight." << endl;
+	
+	
 	return 0;
 }
-
