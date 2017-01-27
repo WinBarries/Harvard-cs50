@@ -1,0 +1,41 @@
+////////////////////////////////////////////////////////////////////////////
+//	Name:		: Kabir Bolatito
+//	Date		: 01-27-2017
+//	School		: Essex County College
+//	Description	: This program calculates the body madd index(BMI)
+//				  Using the formula:
+//				  BMI = (weight/(height)^2)*703
+//				  giving that weight is in pounds and height is in inches.
+//
+///////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	//declaration (refering to the areas of the variables)
+
+
+	// initialization (cleaning area of variables in the area)
+	//int BMI, weight, height;
+
+	// 1. prompt the user to enter his height in pounds
+	cout << "Enter your height in pound"<< endl;
+
+	// 2. capture the user entry and save it to a variable
+	// 3. prompt the user to enter his height in inches
+	// 4. capture the user entry and save it to a variable
+	// 5. Do the calculation,using the formular in description
+
+	/*
+	///int BMI, weight, height;
+	int weight;
+	cout << "Enter your weight";
+	cin >> weight;
+	//cout << weight;
+	*/
+
+	return 0;
+}
+
