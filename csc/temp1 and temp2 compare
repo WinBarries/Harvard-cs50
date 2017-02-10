@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////
+//	Name		: Kabir Bolatito
+//	Date		: 1-28-2017
+//  Description	: This project will check if the difference
+//                between temp1 and temp2 is more than 2.3,
+//                and set the variable approx to (temp1 - temp2) * factor.
+//////////////////////////////////////////
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	// Declaration
+    float temp1;
+    float temp2;
+    float factor;
+    float approx;
+
+	// Initialization
+    temp1  = 0.0;
+    temp1  = 0.0;
+    //factor = 0.0;
+    //approx = 0.0;
+
+	// 1. Ask the user for temp1 input
+    cout << "Please enter a temp1 value: ";
+
+	// 2. Collect the temp1 input
+    cin >> temp1;
+
+	// 3. As the user for the temp2 input
+	cout << "Please enter a temp2 value: ";
+
+	// 4. Collect the temp2 input
+    cin >> temp2;
+
+	// 6. If the difference between temp1 and temp2 is more 2.3
+		if (temp1 - temp2 > 2.3)
+        {
+            //set approx equal to approx = (temp1 - temp2) * factor
+            approx = (temp1 - temp2) * factor;
+
+        }
+
+    return 0;
+}
