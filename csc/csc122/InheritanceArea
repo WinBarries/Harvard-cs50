@@ -1,0 +1,57 @@
+// derived classes
+// Kabir Bolatito
+
+#include <iostream>
+using namespace std;
+
+class Polygon {
+protected:
+	int width, height, topWidth;
+public:
+	void set_values(int a, int b)
+	{
+		width = a; height = b;
+	}
+	void set_polvalues(int a, int b, int c)
+	{
+		width = a; height = b; topWidth = c;
+	}
+};
+
+class Rectangle : public Polygon {
+public:
+	int area()
+	{
+		return width * height;
+	}
+};
+
+class Triangle : public Polygon {
+public:
+	int area()
+	{
+		return width * height / 2;
+	}
+};
+
+class trapezium : public Polygon {
+public:
+	int topWidth;
+	int area()
+	{
+		
+		return (topWidth + width) * height / 2;
+	}
+};
+int main() {
+	Rectangle rect;
+	Triangle trgl;
+	trapezium trap;
+	rect.set_values(4, 5);
+	trgl.set_values(4, 5);
+	trap.set_polvalues(4, 9, 5);
+	cout << rect.area() << '\n';
+	cout << trgl.area() << '\n';
+	cout << trap.area() << '\n';
+	return 0;
+}
