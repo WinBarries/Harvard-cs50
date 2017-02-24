@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1487965168 source:/home/tito/csc/hw/main.cpp
+	<iostream>
+	<iomanip>
+	"circle.h"
+	"cylinder.h"
+	<string.h>
+
+1487542999 /home/tito/csc/hw/rectangleType.h
+
+1487542976 /home/tito/csc/hw/boxType.h
+	"rectangleType.h"
+
+1487957271 source:/home/tito/csc/hw/circleImp.cpp
+	<iostream>
+	"circle.h"
+
+1487688399 /home/tito/csc/hw/circle.h
+
+1487965337 source:/home/tito/csc/hw/cylinderImp.cpp
+	<iostream>
+	"cylinder.h"
+	"circle.h"
+
+1487776109 /home/tito/csc/hw/cylinder.h
+	"circle.h"
+
