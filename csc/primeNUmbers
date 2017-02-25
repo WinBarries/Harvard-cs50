@@ -1,0 +1,86 @@
+////////////////////////////////////////////////////
+//	Name		: Kabir Bolatito
+//	Date		: 1-28-2017
+//  Description	: This project will take two arguments from the user
+//                 and print out all the prime numbers between the two inputs
+////////////////////////
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //Declaration
+    int floor;
+    int ceiling;
+    int primeChecker;
+    int temp;
+
+    // Ask the user to enter two numbers they want to check the prime number
+    cout << "Enter two numbers intervals you want to check their prime number: ";
+    cin >> floor >> ceiling;
+
+    //swapping numbers if the first argument if larger than the second argument input by the user
+    if (floor > ceiling)
+        {
+            //Alert the user what they entered and
+            cout << "You entered a high value and a smaller value, however, we got your back\n";
+            cout << "The prime numbers between "<< floor << " and " << ceiling << " are: ";
+
+            //temp to hold the first input(floor)
+            temp = floor;
+
+            //parsing the value for ceiling into floor
+            //floor now has the second user's argument which will be smaller value
+            floor = ceiling;
+
+            //parsing the originally stored argument which was given to temp into ceiling
+            //ceiling will now have the larger value
+            ceiling = temp;
+
+        }
+
+    // An else statement if the user entered a small argument first then a larger argument
+    else{
+
+    //Tell the user the prime numbers in between their interval
+    cout << "The prime numbers between "<< floor << " and " << ceiling << " are: ";
+
+    }
+
+    //while loop to iterate the range of user's input of floor and ceiling values
+    while (floor < ceiling)
+    {
+        //Initialization
+        primeChecker = 0;
+
+        // A for loop that set i=2 and check if i is less than or equal the floor value divided by 2
+        for(int i = 2; i <= floor/2; ++i)
+        {
+            //check if floor value has a remainder of 0 when divided by i
+            //if it does then its is not a prime number
+            if(floor % i == 0)
+            {
+                //set primeChecker to 1
+                primeChecker = 1;
+                break;
+            }
+        }
+
+        //An if statement to check if the floor value meets prime number specification which are
+        // To check if the primeChecker is still equal to 0
+        // To check if the floor value is greater than one
+        // because prime numbers are greater than zero
+        // Prime numbers can not be negative
+        if (primeChecker == 0 && floor > 1)
+
+            //Print the floor value if the above conditions are met
+            cout << floor << " ";
+
+        //An increment after every prime output
+        ++floor;
+    }
+
+    //end the program once compelted
+    return 0;
+}
