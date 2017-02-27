@@ -1,90 +1,82 @@
 
-#include <iostream>                                         //Line 1
-#include <iomanip>                                          //Line 2
-#include "circle.h"                                          //Line 3
+#include <iostream>
+#include <iomanip>
+#include "circle.h"
 #include "cylinder.h"
-#include <string.h>                                      //Line 4
+#include <string.h>
 
-using namespace std;                                        //Line 5
+using namespace std;
 
-int main()                                                  //Line 6
-{                                                           //Line 7
-    cylinder can;
-    circle arc;                                  //Line 8
-    double costPerCan;                                //Line 9
-    double CostForDiagnose;                     //Line 10
-    double height, radius;                                   //Line 11
-    double medicalCost;
-    char a[100];
-    float coke, sprite = 44.0;
-    float creamSoda = 49.0;
-    float nectar = 35.0;
-    float pepsi = 41.0;
+int main()
+{
+    cylinder service;
+    double costPerCan;
+    double height, radius;
+    char input[100];
+    float tank;
+    float can;
+    float pot;
+    int selectedWidth;
+    float canCostTank;// = 0.75;
 
-    cout << "Enter which soda you consume the most over the last 30 days\n";
-    cout << " choose from the following: coke, sprite,creamSoda, nectar\n";
+    cout << "##########################################\n";
+    cout << "  Welcome to TITO's construction company  \n";
+    cout << "##########################################\n";
 
-                                   //Line 14
-    cin >> a;
-    if(strcmp(a, "pepsi") == 0){ height = pepsi;}
+    // As the user to choose
+    cout << "Choose from service we office> tank, can, pot :";
+
+    // Get the user's input                               //Line 14
+    cin >> input;
+
+    //cost of each services
+    if(strcmp(input, "tank") == 0){ canCostTank = 1.75;}
     else if
-        (strcmp(a, "coke") == 0){ height = coke;}
+        (strcmp(input, "can") == 0){ canCostTank = 0.50;}
     else if
-        (strcmp(a, "creamSoda") == 0){height = creamSoda;}
+        (strcmp(input, "pot") == 0){canCostTank = 0.75;}
+    /*else if
+        (strcmp(input, "sprite") == 0){ canCostTank = sprite;}
     else if
-        (strcmp(a, "sprite") == 0){ height = sprite;}
-    else if
-        (strcmp(a, "nectar") == 0){ height = nectar;}
-
+        (strcmp(input, "nectar") == 0){ canCostTank = nectar;}
+    */
     else {
-    cout <<"You enter "<<a<<" which doesn't correspond to the soda product mentioned above\n";
-    cout << "Try again later buy selecting listed soda products.\n";
+    cout <<"You enter "<<input<<" which doesn't correspond to the service we offer\n";
+    cout << "Try again later by selecting listed services.\n";
     //End program
         return 0;
     }
 
-    cout << "you have selected "<<a<<" which has "<<height<<"g sugar content"<<endl;                                           //Line 16
+    cout << "How high do you want the "<<input<<" to be (in feet)?: ";
+    cin >> height;
 
-    can.setHeight(height);                       //Line 17
+    cout << "How wide do you want the "<<input<<" to be (in feet)?: ";
+    cin >>selectedWidth;
+    radius = selectedWidth / 2;
 
-    cout << "Line 18: Enter the cost of a can of soda "<< "(per can): $";                                //Line 18
-    cin >> radius;
-    arc.setRadius(radius);                               //Line 19
-    cout << endl;                                           //Line 20
+    cout << "You have selected "<<input<<" which has a height of "<<height<<"feet"<<endl;                                           //Line 16
 
-    cout << "Line 21: Enter the cost of doctor's diagnoses "<< "medical co Pay: $";                         //Line 21
-    cin >> CostForDiagnose;                     //Line 22
-    cout << endl;                                           //Line 23
+    service.setHeight(height);
+    service.setRadius(radius);                       //Line 17
 
-    medicalCost = can.volume() * costPerCan + can.area() * CostForDiagnose;  //Line 24
+    cout << input<<" can contain "<<service.volume() <<" of any liquid.\n";
+                                         //Line 18
+    cout << "It will cost you $"<< canCostTank * service.volume() <<endl;                                //Line 19
+    cout << endl;
 
-    cout << "The medical cost for soda intake diagnosis is: $" << medicalCost
-         << endl;                                           //Line 25
+    cout << "The total area of materials need to make "<<input<<" is "<<service.area()<<" by size so prepare a place or section that can accommodate it."<<endl;                                          //Line 20
 
-   // boxType package;                                        //Line 26
-    //double height;                                          //Line 27
-    //double wrappingCostPerSquareFeet;                       //Line 28
+   // service(2,3,4,5);
+    circle c1;
+    double x1 = 0.0;
+    double y1= 0.0;
 
-    //cout << "Line 29: Enter the length, width, and height "
-      //   << "of the package (in feet): ";                   //Line 29
-    //cin >> length >> width >> height;                       //Line 30
-    //cout << endl;                                           //Line 31
+    c1.setCenter(3.0, 4.0);
+    c1.getCenter(x1, y1);
+    cout << "x:" << x1 << " y: " << y1 << endl;
 
-    //package.setDimension(length, width, height);            //Line 32
 
-    //cout << "Line 33: Enter the cost (25 to 50 cents) of "
-      //   << "wrapping per square foot: ";                   //Line 33
-    //cin >> wrappingCostPerSquareFeet;                       //Line 34
-    //cout << endl;                                           //Line 35
 
-    //billingAmount = wrappingCostPerSquareFeet
-      //              * package.area() / 100;                 //Line 36
-
-    //if (billingAmount < 1.00)                               //Line 37
-      //  billingAmount = 1.00;                               //Line 38
-
-    //cout << "Line 39: Amount due: $" << billingAmount
-      //   << endl;                                           //Line 39
 
     return 0;                                               //Line 40
 }                                                           //Line 41

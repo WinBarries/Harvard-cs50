@@ -27,14 +27,12 @@ double cylinder::area()
 
 cylinder::cylinder()
 {
-    height = 2;
+    height = 0.0;
 }
 
-//cylinder::cylinder(double h, double x, double y, double r):circle(x, y, r)
-//{
-  //  	if (h >= 0)
-	//    height = h;
-
-
-
-//}
+cylinder::cylinder(double h, double r, double x, double y):circle(r, x, y)
+{
+    setHeight(h);
+    setRadius(r);
+    setCenter(x, y);
+}
