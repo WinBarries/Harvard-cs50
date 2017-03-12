@@ -1,0 +1,100 @@
+/////////////////////////
+// Name:		Kabir Bolatito
+// Date:		March 11, 2017
+// Description:	
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// function prototype
+void menu();
+void chopper(double num, int &whole, double &real);
+string wholeBinaryConverter(int whole);
+string realBinaryConverter(double real);
+
+// Global variable
+int singlebias = 127;
+int doublebias = 1023;
+
+
+int main()
+{
+	//1. Build a menu function
+	//menu();
+	
+	//double num;
+	//int whole;
+	double real;
+	float unput;
+	string str;
+	cout << "Please enter a number: ";
+	cin >> unput;
+	str = realBinaryConverter(real);
+	cout << "The binary value for " << unput << " is " << str << endl;
+	return 0;
+}
+
+void menu()
+{
+	// Declaration
+	int choice;
+	cout << "Please choose the type of conversion: \n";
+	cout << "1. convert to single precision \n";
+	cout << "2. convert to double precision \n";
+	cin >> choice;
+	switch (choice)
+	{
+	case 1:/**/break;
+	case 2:/**/break;
+	default:/**/break;
+	}
+}
+
+//////////////////////////////////////////////
+// This function takes a double type parameter(argument)
+// and communicates back back an integer and a double
+// Declaring formal parameters inside chopper
+/*void chopper(double num, int &whole, double &real)
+{
+	whole = (int)num;
+	real = num - whole;
+}
+
+///////////////////////////////////////////////
+// This function converts whole part to binary
+
+string wholeBinaryConverter(int whole)
+{
+	string str;
+	while (whole > 0)
+	{
+		if (whole % 2 == 0)
+			str = "0" + str;
+		else
+			str = "1" + str;
+		whole = whole / 2;
+	}
+	return str; //the function is not a void, it will return a string type
+}
+ 
+ */
+///////////////////////////////////////////////
+// This function converts real part to binary
+
+string realBinaryConverter(double real)
+{
+	string str = ".";
+	for (int i = 0; i < 64; i++)
+	{
+		real = real * 2;
+		if (real >= 1)
+		{
+			str = str + "1";
+			real = real - 1;
+		}
+		else
+			str = str + "0";
+	}
+	return str;
+}
