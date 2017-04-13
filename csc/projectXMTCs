@@ -1,0 +1,67 @@
+///////////////////////////////////////////////////////
+/// Author: Bolatito Kabir
+///
+//////////////////////////////////////////////
+#include <iostream>
+#include <string>
+using namespace std;
+
+void inchesFeet_cm();
+
+int main() {
+    
+    inchesFeet_cm();
+    
+    return 0;
+}
+
+void inchesFeet_cm()
+
+{
+    //declaration
+    float inches = 0;
+    float cmI = 0;
+    float feet = 0;
+    float cmF = 0;
+    char retry = 'y';
+    cout << "##########################################\n";
+    cout << "  Welcome to length convert application  \n";
+    cout << "##########################################\n";
+    while (retry == 'y' || retry == 'Y'){
+        cout << "please enter a length \n";
+        cout << "\t\t in feet: ";
+        
+        cin >> feet;
+        while (!(feet >= 0)) {
+            cout << "feet must be positive number. \n";
+            cin.clear();
+            cin.ignore(100, '\n');
+            cout << "\t\t in feet: ";
+            cin >> feet;
+        }
+        cout << "\t\t in inches: ";
+        
+        cin >> inches;
+        while (!(inches >= 0)) {
+            cout << "inches must be positive number.  \n";
+            //cin.clear();
+            //cin.ignore(100, '\n');
+            cout << "\t\t in inches: ";
+            cin >> inches;
+            
+        }
+        cmF = feet * 30.48;
+        
+        cmI = inches * 2.54;
+        
+        cout << feet << "feet and "<<inches<<"inches is equivalent to " << cmF << "feet and "<<cmI<<"inches" << endl;
+        
+        cout << "Please try again Y/N: \n";
+        cin >> retry;
+        
+    }
+    
+    //  return 0;
+    
+}
+
