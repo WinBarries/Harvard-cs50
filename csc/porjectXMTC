@@ -9,52 +9,63 @@ using namespace std;
 void inchesFeet_cm();
 
 int main() {
-
+    
     inchesFeet_cm();
-
+    
     return 0;
 }
 
 void inchesFeet_cm()
 
 {
-	//declaration
-	float inches;
-    float cmI;
-	float feet;
-	float cmF;
-
-	//initialization
-
-	inches = 0;
-    cmI = 0;
-	feet = 0;
-    cmF = 0;
-    int retry = 1;
-    while (retry == 1 || retry == 1){
-	cout << "please enter a length feet: ";
-
-	cin >> feet;
-
-    cout << "\t\t in inches: ";
-
-	cin >> inches;
-    if (feet >= 0 && inches >= 0) {
-
-	cmF = feet * 30.48;
-
-	cmI = inches * 2.54;
-
-	cout << feet << "feet and "<<inches<<"inches  is equivalent to " << cmF << "feet and "<<cmI<<"inches" << endl;
-
-	}
-	else
-        cout << "The value for length must be a positive number. \n";
-        cout << "Please try again \n";
-        retry = 1;
-
+    //declaration
+    float inches = 0;
+    float cmI = 0;
+    float feet = 0;
+    float cmF = 0;
+    char retry = 'y';
+    cout << "##########################################\n";
+    cout << "  Welcome to length convert application  \n";
+    cout << "##########################################\n";
+    while (retry == 'y' || retry == 'Y'){
+        cout << "please enter a length \n";
+        cout << "\t\t in feet: ";
+        
+        cin >> feet;
+        //while (!(feet >= 0)) {
+          //  cout << "feet must be positive number. \n";
+            //cin.clear();
+            //cin.ignore(100, '\n');
+            //cout << "\t\t in feet: ";
+            //cin >> feet;
+        //}
+        while ((!cin) || feet < 0){
+            cout << "\n ERROR, enter a positive feet value: " ;
+            cin.clear();
+            cin.ignore(256,'\n');
+            cin >> feet;
+        }
+        cout << "\t\t in inches: ";
+        
+        cin >> inches;
+        while ((!cin) || inches < 0){
+            cout << "\n ERROR, enter a positive inches value: " ;
+            cin.clear();
+            cin.ignore(256,'\n');
+            cin >> inches;
+        }
+        cmF = feet * 30.48;
+        
+        cmI = inches * 2.54;
+        
+        cout << feet << "feet and "<<inches<<"inches is equivalent to " << cmF << "feet and "<<cmI<<"inches" << endl;
+        
+        cout << "Please try again Y/N: \n";
+        cin >> retry;
+        
     }
-
-  //  return 0;
-
+    
+    //  return 0;
+    
 }
+
